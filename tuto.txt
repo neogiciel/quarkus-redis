@@ -1,0 +1,19 @@
+#build
+docker build --tag "neogicel/quarkus-api-pn.jar:1.0" .
+#run
+docker run -p 8089:8089 neogicel/quarkus-api-pn.jar:1.0
+#push
+docker push neogicel/quarkus-api-pn.jar:1.0
+
+#commande dans un pod
+kubectl logs quarkus-api-pn-k8s-7fd7cd445f-67cmd 
+kubectl exec -it quarkus-api-pn-k8s-7fd7cd445f-67cmd  -- sh
+
+#pipeline
+D:\concourse\fly.exe -t tutorial --target tutorial login --concourse-url http://127.0.0.1:9000 -u test -p test
+D:\concourse\fly.exe -t tutorial set-pipeline -p quarkus-pn -c ci/ci.yml
+
+#git 
+git add .
+git commit -m "sources v1.48"
+git push -u origin main      

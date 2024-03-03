@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment # Kubernetes resource kind we are creating
+metadata:
+  name: quarkus-api-pn-k8s
+spec:
+  selector:
+    matchLabels:
+      app: quarkus-api-pn-k8s
+  replicas: 3
+#  minReadySeconds: 20
+#  strategy:
+#    type: RollingUpdate
+#    rollingUpdate:
+#     maxUnavailable: 25%
+#     maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: quarkus-api-pn-k8s
+    spec:
+      containers:
+        - name: quarkus-api-pn-k8s
+          image: neogicel/quarkus-api-pn-jvm:4.8
+# Image that will be used to containers in the cluster
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8084 
+
+---
+apiVersion: v1 # Kubernetes API version
+kind: Service # Kubernetes resource kind we are creating
+metadata: # Metadata of the resource kind we are creating
+  name: quarkus-api-pn-k8s-svc
+spec:
+  selector:
+    app: quarkus-api-pn-k8s
+  ports:
+    - protocol: "TCP"
+      port: 8084 # The port that the service is running on in the cluster
+      targetPort: 8084 # The port exposed by the service
+  type: NodePort # type of the service.
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: quarkus-api-pn-k8s-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: quarkus-api-pn-k8s-svc
+            port:
+              number: 8084
