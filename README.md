@@ -1,5 +1,5 @@
 <h1>Application Quarkus Redis MySQL</h1>
-<img src="[https://www.google.com/url?sa=i&url=https://Ffr.wikipedia.org%2Fwiki%2FFichier%3ARedis_Logo.svg&psig=AOvVaw1lsh1P5HZVl6OEG27CgOSq&ust=1709546568348000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPjLobHr14QDFQAAAAAdAAAAABAE](https://upload.wikimedia.org/wikipedia/fr/thumb/6/6b/Redis_Logo.svg/701px-Redis_Logo.svg.png?20190421180155)" height=200px>
+<img src="https://upload.wikimedia.org/wikipedia/fr/thumb/6/6b/Redis_Logo.svg/701px-Redis_Logo.svg.png?20190421180155" height=200px>
 
 <p>
 Application permettant de gérer un cache distribué avec Redis
