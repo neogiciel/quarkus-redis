@@ -85,7 +85,8 @@ public class ApiController {
 
 <h1>Compilation et Lancement</h1>
 <p>
-Clear: <b>mvn clen</b><br>
+Clear: <b>mvn clean</b><br>
 Mise à jour des dependences: <b>mvn dependency:resolve</b><br>
 Compilation et Lancement: <b>mvn quarkus:dev</b>
+Url du service: http://localhost:8080<br>  
 </p>
