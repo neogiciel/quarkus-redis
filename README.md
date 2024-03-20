@@ -6,6 +6,7 @@ Mise en place d'un cache distribué Redis avec MysQL
 <h2>Mise en place</h2><br>
 Ajout des dépendences<br>
 <h2>Pom.xml</h2><br>
+<p>
 <dependency>
   <groupId>io.quarkus</groupId>
   <artifactId>quarkus-redis-cache</artifactId>
@@ -15,9 +16,9 @@ Ajout des dépendences<br>
 quarkus.redis.hosts=redis://localhost:6379
 #expiration du cache
 quarkus.cache.redis.expire-after-write=20
-
+</p>
 <h2>ApiController.java</h2><br>
-
+<p>
 @Path("/cache")
 public class ApiController {
  
@@ -80,30 +81,11 @@ public class ApiController {
     }
  
 }
-
-
 <p>
-Application permettant de gérer un cache distribué avec Redis
-Utilisation de la base de données MySQL
-</p>
-<h2>Application Quarkus Redis MySQL</h2>
-## Utilisation des anonations  
 
-
-<h1>Application PHP K8s</h1>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/2560px-PHP-logo.svg.png" height=160px>
+<h1>Compilation et Lancement</h1>
 <p>
-Exemple de déploeiement d'un site PHP 8 et MySQL dans un cluster K8s<br>
+Clear: <b>mvn clen</b><br>
+Mise à jour des dependences: <b>mvn dependency:resolve</b><br>
+Compilation et Lancement: <b>mvn quarkus:dev</b>
 </p>
-<h2>Le site PHP</h2>
-<p>
-<li>Le site est disponible au sein du dossier src</li><br>
-<li>La confifguration apache et php est situé sous dossier conf</li><br>
-<li>Les extensions PHP utilisés sont mysqli et pdo_mysql</li><br>
-</p>
-<h2>Déploiement K8S</h2>
-<p>
-Le déploiement sous K8S se fait par l'intermédiaire d'un Dockerfile<br>
-Le déploiement global dans le cluster s'effectue via le fichier kube.yml
-</p>
-
