@@ -17,7 +17,7 @@ quarkus.redis.hosts=redis://localhost:6379
 #expiration du cache
 quarkus.cache.redis.expire-after-write=20
 </p>
-<h2>ApiController.java</h2><br>
+<h2>Controller ApiController.java</h2><br>
 <p>
 @Path("/cache")
 public class ApiController {
