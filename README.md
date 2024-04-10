@@ -12,9 +12,9 @@ Ajout des dépendences<br>
   <artifactId>quarkus-redis-cache</artifactId>
 </dependency>
 <h2>application.properties</h2><br>
-#base de donnée redis
+#base de donnée redis<br>
 quarkus.redis.hosts=redis://localhost:6379<br>
-#expiration du cache
+#expiration du cache<br>
 quarkus.cache.redis.expire-after-write=20<br>
 </p>
 <h2>Controller ApiController.java</h2><br>
@@ -87,6 +87,6 @@ public class ApiController {
 <p>
 Clear: <b>mvn clean</b><br>
 Mise à jour des dependences: <b>mvn dependency:resolve</b><br>
-Compilation et Lancement: <b>mvn quarkus:dev</b>
+Compilation et Lancement: <b>mvn quarkus:dev</b><br>
 Url du service: http://localhost:8080<br>  
 </p>
