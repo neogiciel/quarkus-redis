@@ -13,9 +13,9 @@ Ajout des dépendences<br>
 </dependency>
 <h2>application.properties</h2><br>
 #base de donnée redis
-quarkus.redis.hosts=redis://localhost:6379
+quarkus.redis.hosts=redis://localhost:6379<br>
 #expiration du cache
-quarkus.cache.redis.expire-after-write=20
+quarkus.cache.redis.expire-after-write=20<br>
 </p>
 <h2>Controller ApiController.java</h2><br>
 <p>
